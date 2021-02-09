@@ -1,4 +1,4 @@
-declare module "i18next-icu" {
+declare module "@braze/i18next-icu" {
   import { i18n, ThirdPartyModule } from "i18next";
 
   interface IntlLocaleData {}
