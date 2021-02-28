@@ -1,10 +1,6 @@
 declare module "@braze/i18next-icu" {
   import { i18n, ThirdPartyModule } from "i18next";
 
-  interface IntlLocaleData {}
-
-  export type LocaleData = IntlLocaleData | IntlLocaleData[];
-
   /**
    * @see https://github.com/yahoo/intl-messageformat#user-defined-formats
    * @see https://github.com/i18next/i18next-icu/issues/12#issuecomment-578893063
@@ -25,7 +21,6 @@ declare module "@braze/i18next-icu" {
   export interface IcuConfig {
     memoize?: boolean;
     memoizeFallback?: boolean;
-    localeData?: LocaleData | LocaleData[];
     formats?: IcuFormats;
     bindI18n?: string;
     bindI18nStore?: string;
@@ -34,7 +29,6 @@ declare module "@braze/i18next-icu" {
 
   export interface IcuInstance<TOptions = IcuConfig> extends ThirdPartyModule {
     init(i18next: i18n, options?: TOptions): void;
-    addLocaleData(localeData: LocaleData | LocaleData[]): void;
     addUserDefinedFormats(formats: IcuFormats): void;
     clearCache(): void;
   }
